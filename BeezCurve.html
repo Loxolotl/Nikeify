@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 Canvas Tag</title>
+</head>
+
+<body>
+    <canvas id="newCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
+    <input type="color" id="color" value="#000000" >
+    <script>
+        can = document.getElementById("color")  //get canvas element
+        can.addEventListener('input', DrawCanvas, false) //register event
+        function DrawCanvas(){
+        var a = document.getElementById("color").value;
+        var c = document.getElementById('newCanvas');
+        var ctx = c.getContext('2d');
+        ctx.beginPath();
+        ctx.moveTo(98 + 25, 165 + 35);
+        ctx.bezierCurveTo(75 + 25, 190 + 35, 59 + 25, 214 + 35, 57 + 25, 223 + 35);
+        ctx.bezierCurveTo(44 + 25, 283 + 35, 98 + 25, 276 + 35, 101 + 25, 276 + 35);
+        ctx.bezierCurveTo(143 + 25, 270 + 35, 185 + 25, 247 + 35, 199 + 25, 242 + 35);
+        ctx.bezierCurveTo(232 + 25, 229 + 35, 393 + 25, 158 + 35, 379 + 25, 164 + 35);
+        ctx.fillStyle = a;
+        ctx.strokeStyle = "white";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(98 + 25, 164 + 35);
+        ctx.bezierCurveTo(84 + 25, 188 + 35, 95 + 25, 221 + 35, 107 + 25, 224 + 35);
+        ctx.bezierCurveTo(136 + 25, 230 + 35, 155 + 25, 223 + 35, 181 + 25, 216 + 35);
+        ctx.bezierCurveTo(219 + 25, 206 + 35, 395 + 25, 157 + 35, 381 + 25, 161 + 35);
+        ctx.stroke();
+        ctx.strokeStyle = "white";
+        ctx.fillStyle = "white";
+        ctx.fill();
+    }
+    </script>
+
+</body>
+
+</html>
