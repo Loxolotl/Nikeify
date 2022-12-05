@@ -6,35 +6,47 @@
 </head>
 
 <body>
-    <canvas id="newCanvas" width="500" height="500" style="border:1px solid #000000;"></canvas>
-    <input type="color" id="color" value="#000000" >
+    <canvas id="newCanvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+    <input type="color" id="color" value="#000000">
+    <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1">
     <script>
         can = document.getElementById("color")  //get canvas element
         can.addEventListener('input', DrawCanvas, false) //register event
-        function DrawCanvas(){
-        var a = document.getElementById("color").value;
-        var c = document.getElementById('newCanvas');
-        var ctx = c.getContext('2d');
-        ctx.beginPath();
-        ctx.moveTo(98 + 25, 165 + 35);
-        ctx.bezierCurveTo(75 + 25, 190 + 35, 59 + 25, 214 + 35, 57 + 25, 223 + 35);
-        ctx.bezierCurveTo(44 + 25, 283 + 35, 98 + 25, 276 + 35, 101 + 25, 276 + 35);
-        ctx.bezierCurveTo(143 + 25, 270 + 35, 185 + 25, 247 + 35, 199 + 25, 242 + 35);
-        ctx.bezierCurveTo(232 + 25, 229 + 35, 393 + 25, 158 + 35, 379 + 25, 164 + 35);
-        ctx.fillStyle = a;
-        ctx.strokeStyle = "white";
-        ctx.fill();
+        function DrawCanvas() {
+            var a = document.getElementById("color").value;
+            var c = document.getElementById('newCanvas');
+            var b = document.getElementById('size').valueAsNumber;
+            var ctx = c.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo((157 + 25)*b, (109 + 35)*b);
+            ctx.bezierCurveTo((131 + 25)*b, (140 + 35)*b, (119 + 25)*b, (155 + 35)*b, (105 + 25)*b, (192 + 35)*b);
+            ctx.bezierCurveTo((89 + 25)*b, (233 + 35)*b, (119 + 25)*b, (256 + 35)*b, (131 + 25)*b, (260 + 35)*b);
+            ctx.bezierCurveTo((144 + 25)*b, (264 + 35)*b, (171 + 25)*b, (266 + 35)*b, (199 + 25)*b, (254 + 35)*b);
+            ctx.bezierCurveTo((287 + 25)*b, (217 + 35)*b,(313 + 25)*b, (205 + 35)*b, (336 + 25)*b, (195 + 35)*b);
+            ctx.bezierCurveTo((376 + 25)*b, (177 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (98 + 35)*b);
+            ctx.fillStyle = a;
+            ctx.strokeStyle = "white";
+            ctx.fill();
+            ctx.stroke();
 
-        ctx.beginPath();
-        ctx.moveTo(98 + 25, 164 + 35);
-        ctx.bezierCurveTo(84 + 25, 188 + 35, 95 + 25, 221 + 35, 107 + 25, 224 + 35);
-        ctx.bezierCurveTo(136 + 25, 230 + 35, 155 + 25, 223 + 35, 181 + 25, 216 + 35);
-        ctx.bezierCurveTo(219 + 25, 206 + 35, 395 + 25, 157 + 35, 381 + 25, 161 + 35);
-        ctx.stroke();
-        ctx.strokeStyle = "white";
-        ctx.fillStyle = "white";
-        ctx.fill();
-    }
+            ctx.beginPath();
+            ctx.beginPath();
+            ctx.moveTo((157 + 25)*b, (110 + 33)*b);
+            ctx.bezierCurveTo((139 + 25)*b, (152 + 35)*b, (150 + 25)*b, (169 + 35)*b, (156 + 25)*b, (179 + 35)*b);
+            ctx.bezierCurveTo((166 + 25)*b, (194 + 35)*b, (194 + 25)*b, (195 + 35)*b, (209 + 25)*b, (192 + 35)*b);
+            ctx.bezierCurveTo((240 + 25)*b, (185 + 35)*b, (317 + 25)*b, (164 + 35)*b, (332 + 25)*b, (160 + 35)*b);
+            ctx.bezierCurveTo((364 + 25)*b, (152 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (96 + 35)*b);
+            ctx.strokeStyle = "white";
+            ctx.fillStyle = "white";
+            ctx.fill();
+        }
+        function wipe(){
+            da = document.getElementById("size")  //get canvas element
+        da.addEventListener('click', wipe, false) //register event
+            var c = document.getElementById('newCanvas');
+            var ctx = c.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
     </script>
 
 </body>
