@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Nikeify!</title>
+    <script src="scripts.js"></script> 
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+
+<body>
+    <!-- <canvas id="Canvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+    <input type="color" id="color" value="#000000">
+    <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1"> -->
+    <script>
+        can = document.getElementById("color")  //get canvas element
+        can.addEventListener('input', DrawCanvas, false) //register input event
+        da = document.getElementById("size")  //get size element
+        da.addEventListener('input', wipe, false) //register input event
+
+        item1 = document.getElementById("item1")
+        item1.addEventListener('click', item1, false)
+
+        item2 = document.getElementById("item1")
+        item2.addEventListener('click', item2, false)
+
+        item3 = document.getElementById("item1")
+        item3.addEventListener('click', item3, false)
+
+        item4 = document.getElementById("item1")
+        item4.addEventListener('click', item4, false)
+        
+    </script>
+    <div id="header">
+        <div id="img"></div>
+        <div id="menu">
+            <div class="item" id="item1">Intro</div>
+            <div class="item" id="item2">Products</div>
+            <div class="item" id="item3">Nikeify!</div>
+            <div class="item" id="item4">About us</div>
+        </div>
+    </div>
+</body>
+
+</html>
