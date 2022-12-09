@@ -45,3 +45,18 @@ body{
     background-color: rgb(34, 34, 34);
     transition: background-color 0.3s;
 }
+.hamburger--spring{
+    display:none;
+}
+@media only screen and (max-width: 980px) {
+    #menu{
+        display:none;
+    }
+    .hamburger--spring{
+        display: inline-flex;
+        background-color: black;
+        align-items: center;
+        margin-right:15px;
+        
+    }
+}

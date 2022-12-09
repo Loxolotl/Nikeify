@@ -3,9 +3,12 @@
 
 <head>
     <title>Nikeify!</title>
-    <script src="scripts.js"></script> 
+    <script src="scripts.js"></script>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="lib/dist/hamburgers.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="jquery-3.6.1.min.js"></script>
 </head>
 
 <body>
@@ -15,6 +18,8 @@
     <script>
         can = document.getElementById("color")  //get canvas element
         can.addEventListener('input', DrawCanvas, false) //register input event
+        burg = document.getElementById("burg")  //get canvas element
+        burg.addEventListener('click', burgify, false) //register input event
         da = document.getElementById("size")  //get size element
         da.addEventListener('input', wipe, false) //register input event
 
@@ -29,8 +34,14 @@
 
         item4 = document.getElementById("item1")
         item4.addEventListener('click', item4, false)
-        
+
+        var $hamburger = $(".hamburger--spring");
+        $hamburger.on("click", function (e) {
+            $hamburger.toggleClass("is-active");
+            // Do something else, like open/close menu
+        });
     </script>
+
     <div id="header">
         <div id="img"></div>
         <div id="menu">
@@ -39,6 +50,11 @@
             <div class="item" id="item3">Nikeify!</div>
             <div class="item" id="item4">About us</div>
         </div>
+        <button class="hamburger--spring" type="button" id="burg">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
     </div>
 </body>
 
