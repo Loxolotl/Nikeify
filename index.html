@@ -35,11 +35,14 @@
         item4 = document.getElementById("item1")
         item4.addEventListener('click', item4, false)
 
-        var $hamburger = $(".hamburger--spring");
-        $hamburger.on("click", function (e) {
-            $hamburger.toggleClass("is-active");
-            // Do something else, like open/close menu
-        });
+        
+
+        $(document).ready(function(){
+	$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+     
     </script>
 
     <div id="header">
@@ -50,12 +53,20 @@
             <div class="item" id="item3">Nikeify!</div>
             <div class="item" id="item4">About us</div>
         </div>
-        <button class="hamburger--spring" type="button" id="burg">
-            <span class="hamburger-box">
-                <span class="hamburger-inner"></span>
-            </span>
-        </button>
+        <div id="nav-icon1" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        
     </div>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">Intro</a>
+        <a href="#">Products</a>
+        <a href="#">Nikeify!</a>
+        <a href="#">About us</a>
+      </div>
 </body>
 
 </html>
