@@ -47,9 +47,21 @@ function item4(){
 /* Set the width of the side navigation to 250px */
 function openNav() {
     document.getElementById("mySidenav").style.width = "30vh";
+    document.getElementById("fader").style.opacity = "0.5";
   }
   
   /* Set the width of the side navigation to 0 */
   function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("fader").style.opacity = "0";
   } 
+
+document.addEventListener('click', function(event){
+
+    if(event.target.closest('#nav-icon1')) {
+
+    }
+    else{
+        closeNav();
+    }
+})
