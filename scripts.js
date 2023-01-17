@@ -1,8 +1,42 @@
+ 
+        col = document.getElementById("color")  //get canvas element
+        col.addEventListener('input', DrawCanvas, false) //register input event
+        burg = document.getElementById("burg")  //get canvas element
+        burg.addEventListener('click', burgify, false) //register input event
+        da = document.getElementById("size")  //get size element
+        da.addEventListener('input', wipe, false) //register input event
+
+        item1 = document.getElementById("item1")
+        item1.addEventListener('click', item1, false)
+
+        item2 = document.getElementById("item1")
+        item2.addEventListener('click', item2, false)
+
+        item3 = document.getElementById("item1")
+        item3.addEventListener('click', item3, false)
+
+        item4 = document.getElementById("item1")
+        item4.addEventListener('click', item4, false)
+
+        
+
+        $(document).ready(function(){
+	$('#nav-icon1,#nav-icon2,#nav-icon3,#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+
+
+
+
+
+
+
 function DrawCanvas() {
     var a = document.getElementById("color").value;
-    var c = document.getElementById('Canvas');
-    var b = document.getElementById('size').valueAsNumber;
-    var ctx = c.getContext('2d');
+    var can = document.getElementById("canvas");
+    var b = document.getElementById("size").valueAsNumber;
+    ctx = can.getContext('2d');
     ctx.beginPath();
     ctx.moveTo((157 + 25)*b, (109 + 35)*b);
     ctx.bezierCurveTo((131 + 25)*b, (140 + 35)*b, (119 + 25)*b, (155 + 35)*b, (105 + 25)*b, (192 + 35)*b);
@@ -27,9 +61,9 @@ function DrawCanvas() {
     ctx.fill();
 }
 function wipe(){
-    var c = document.getElementById('newCanvas');
-    var ctx = c.getContext('2d');
-    ctx.clearRect(0, 0, 600, 600);
+    var can = document.getElementById('newCanvas');
+    var ctx = can.getContext('2d');
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function item1(){
