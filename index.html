@@ -14,18 +14,14 @@
 
 <body>
     
-    <script>
-       
-     
-    </script>
     
     <div id="header">
         <div id="swoosh"></div>
         <div id="menu">
-            <div class="item" id="item1">Intro</div>
-            <div class="item" id="item2">Products</div>
-            <div class="item" id="item3">Nikeify!</div>
-            <div class="item" id="item4">About us</div>
+            <div class="item" id="item1" onclick="return toggle('pg0')" >Bezier</div>
+            <div class="item" id="item2" onclick="return toggle('pg1')" >SVG</div>
+            <div class="item" id="item3" onclick="return toggle('pg2')" >PNG</div>
+            <div class="item" id="item4" onclick="return toggle('pg3')" >Nikeify!</div>
         </div>
         <div id="nav-icon1" onclick="openNav()">
             <span></span>
@@ -35,22 +31,121 @@
         
     </div>
     <div id="wrapper">
-        
-            <h1>Nikeify!</h1>
+        <div id="pg">
+            <div id="pg0" class="pg">
+                <h1>Bezier Curve</h1>
 
-        <p>At Nikeify, we're all about empowering you to take control of your style. We believe that everyone has their own unique sense of style, and we want to help you express yours. That's why we created this passion project - to give you the tools you need to find and showcase your style.</p>
-        <p>
+        <p>This is a preview of our powerful bezier curve technology, you can color it and resize it!</p>
         <input type="color" id="color" value="#000000">
         <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1">
 
-        </p>
-        
-        
-        
-            
-        <canvas id="canvas" width="600" height="600" style="border:1px solid #000000;"></canvas>
+        <canvas id="newCanvas" width="600" height="600"></canvas>
            
-        
+            </div>
+            <div id="pg1" class="pg">
+                 <h1 class="h1"> SVG path </h1> 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+            <div id="pg2" class="pg">
+                 <h1 class="h1"> PNG image </h1>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+            <div id="pg3" class="pg">
+                 <h1 class="h1"> Comparison </h1>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                </div>
+            
+        <script>
+            can = document.getElementById("color")  //get canvas element
+        can.addEventListener('input', DrawCanvas, false) //register event
+        function DrawCanvas() {
+            var a = document.getElementById("color").value;
+            var c = document.getElementById('newCanvas');
+            var b = document.getElementById('size').valueAsNumber;
+            var ctx = c.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo((157 + 25)*b, (109 + 35)*b);
+            ctx.bezierCurveTo((131 + 25)*b, (140 + 35)*b, (119 + 25)*b, (155 + 35)*b, (105 + 25)*b, (192 + 35)*b);
+            ctx.bezierCurveTo((89 + 25)*b, (233 + 35)*b, (119 + 25)*b, (256 + 35)*b, (131 + 25)*b, (260 + 35)*b);
+            ctx.bezierCurveTo((144 + 25)*b, (264 + 35)*b, (171 + 25)*b, (266 + 35)*b, (199 + 25)*b, (254 + 35)*b);
+            ctx.bezierCurveTo((287 + 25)*b, (217 + 35)*b,(313 + 25)*b, (205 + 35)*b, (336 + 25)*b, (195 + 35)*b);
+            ctx.bezierCurveTo((376 + 25)*b, (177 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (98 + 35)*b);
+            ctx.fillStyle = a;
+            ctx.strokeStyle = "white";
+            ctx.fill();
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.beginPath();
+            ctx.moveTo((157 + 25)*b, (110 + 33)*b);
+            ctx.bezierCurveTo((139 + 25)*b, (152 + 35)*b, (150 + 25)*b, (169 + 35)*b, (156 + 25)*b, (179 + 35)*b);
+            ctx.bezierCurveTo((166 + 25)*b, (194 + 35)*b, (194 + 25)*b, (195 + 35)*b, (209 + 25)*b, (192 + 35)*b);
+            ctx.bezierCurveTo((240 + 25)*b, (185 + 35)*b, (317 + 25)*b, (164 + 35)*b, (332 + 25)*b, (160 + 35)*b);
+            ctx.bezierCurveTo((364 + 25)*b, (152 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (96 + 35)*b);
+            ctx.strokeStyle = "white";
+            ctx.fillStyle = "white";
+            ctx.fill();
+        }
+        da = document.getElementById("size")  //get canvas element
+        da.addEventListener('click', wipe, false) //register event
+        function wipe(){
+            
+            var c = document.getElementById('newCanvas');
+            var ctx = c.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function toggle(IDS) {
+        var sel = document.getElementById('pg').getElementsByTagName('div');
+        for (var i=0; i<sel.length; i++) { 
+        if (sel[i].id != IDS) { sel[i].style.display = 'none'; }
+        }
+        var status = document.getElementById(IDS).style.display;
+        if (status == 'block') { document.getElementById(IDS).style.display = 'none'; }
+        else { document.getElementById(IDS).style.display = 'block'; }
+
+  return false;
+}
+
+
+        </script>
         
 
         
@@ -67,13 +162,14 @@
 
 
     </div>
+</div>
     <div id="footer"></div>
     <div id="mySidenav" class="sidenav">
         
-        <a href="#">Intro</a>
-        <a href="#">Products</a>
-        <a href="#">Nikeify!</a>
-        <a href="#">About us</a>
+        <a href="#" onclick="return toggle('pg0')" >Bezier</a>
+        <a href="#" onclick="return toggle('pg1')" >SVG</a>
+        <a href="#" onclick="return toggle('pg2')" >PNG</a>
+        <a href="#" onclick="return toggle('pg3')" >Nikeify!</a>
       </div>
 </body>
 

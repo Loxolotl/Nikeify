@@ -9,6 +9,9 @@ body{
     background-position: calc(100%-10vh);
     background-size: 100% 100%;
 }
+#pg1 { display:none; }
+#pg2 { display:none; }
+#pg3 { display:none; }
 #fader{
   position: fixed;
   width: 100%;
@@ -28,6 +31,7 @@ body{
     order: 2;
     position: fixed;
     top: 0px;
+    z-index: 200;
 }
 #swoosh{
     height: 10vh;
@@ -215,7 +219,7 @@ body{
 
 #wrapper{
   background-color: #ffffff;
-  height: 150vh;
+  height: 100vh;
   width: 90%;
   margin-left: auto;
   margin-right: auto;
@@ -253,3 +257,11 @@ body{
   
 }
 
+#newCanvas{
+  position: absolute;
+  margin-left: 25%;
+  width: 50%;
+  top: 15%;
+  border: 2px #E8866C solid;
+  border-radius: 15px;
+}
