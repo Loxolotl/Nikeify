@@ -13,164 +13,200 @@
 </head>
 
 <body>
-    
-    
+
+
     <div id="header">
         <div id="swoosh"></div>
         <div id="menu">
-            <div class="item" id="item1" onclick="return toggle('pg0')" >Bezier</div>
-            <div class="item" id="item2" onclick="return toggle('pg1')" >SVG</div>
-            <div class="item" id="item3" onclick="return toggle('pg2')" >PNG</div>
-            <div class="item" id="item4" onclick="return toggle('pg3')" >Nikeify!</div>
+            <div class="item" id="item1" onclick="return toggle('pg0')">Bezier</div>
+            <div class="item" id="item2" onclick="return toggle('pg1')">SVG</div>
+            <div class="item" id="item3" onclick="return toggle('pg2')">PNG</div>
+            <div class="item" id="item4" onclick="return toggle('pg3')">Nikeify!</div>
         </div>
         <div id="nav-icon1" onclick="openNav()">
             <span></span>
             <span></span>
             <span></span>
-          </div>
-        
+        </div>
+
     </div>
     <div id="wrapper">
         <div id="pg">
             <div id="pg0" class="pg">
                 <h1>Bezier Curve</h1>
 
-        <p>This is a preview of our powerful bezier curve technology, you can color it and resize it!</p>
-        <input type="color" id="color" value="#000000">
-        <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1">
+                <p>This is a preview of our powerful bezier curve technology, you can change its color as you wish</p>
+                
+                <p>
+                <input type="color" id="color" value="#000000">
+                <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1">
+            </p>
+                <canvas id="newCanvas"></canvas>
 
-        <canvas id="newCanvas" width="600" height="600"></canvas>
-           
             </div>
             <div id="pg1" class="pg">
-                 <h1 class="h1"> SVG path </h1> 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                </div>
+                <h1 class="h1"> SVG path </h1>
+                <p>
+                    This is a preview of our SVG technology
+                </p>
+                <p>
+                <img id="imgshrt" src="img/Empty.png">
+                <svg xmlns="http://www.w3.org/2000/svg" width="137px" height="54px" viewBox="0 0 4944 1950" id="svg">
+                    <path id="Neimenovano" fill="black" stroke="black" stroke-width="1" d="M 837.88,140.50
+           C 837.88,140.50 471.50,766.00 812.00,1003.00
+             1156.50,1248.00 1698.00,967.50 2107.50,886.50
+             2619.00,733.50 4779.00,156.00 4779.00,156.00
+             4779.00,156.00 1600.00,1560.00 1600.00,1560.00
+             1600.00,1560.00 1050.00,1843.50 678.00,1807.50
+             325.50,1797.00 40.50,1542.00 207.00,1048.50
+             379.50,604.50 646.50,351.00 837.81,140.56" />
+                </svg>
+            </p>
+
+
+
+
+
+
+
+
+
+
+            </div>
             <div id="pg2" class="pg">
-                 <h1 class="h1"> PNG image </h1>
+                <h1 class="h1"> PNG image </h1>
                 
+
+                <img id="imgpng" src="img/Empty.png">
+
+
+                <img id="imgshrt2" src="img/Empty.png">
+
                 
+
                 
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
             <div id="pg3" class="pg">
-                 <h1 class="h1"> Comparison </h1>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                </div>
-            
-        <script>
-            can = document.getElementById("color")  //get canvas element
-        can.addEventListener('input', DrawCanvas, false) //register event
-        function DrawCanvas() {
-            var a = document.getElementById("color").value;
-            var c = document.getElementById('newCanvas');
-            var b = document.getElementById('size').valueAsNumber;
-            var ctx = c.getContext('2d');
-            ctx.beginPath();
-            ctx.moveTo((157 + 25)*b, (109 + 35)*b);
-            ctx.bezierCurveTo((131 + 25)*b, (140 + 35)*b, (119 + 25)*b, (155 + 35)*b, (105 + 25)*b, (192 + 35)*b);
-            ctx.bezierCurveTo((89 + 25)*b, (233 + 35)*b, (119 + 25)*b, (256 + 35)*b, (131 + 25)*b, (260 + 35)*b);
-            ctx.bezierCurveTo((144 + 25)*b, (264 + 35)*b, (171 + 25)*b, (266 + 35)*b, (199 + 25)*b, (254 + 35)*b);
-            ctx.bezierCurveTo((287 + 25)*b, (217 + 35)*b,(313 + 25)*b, (205 + 35)*b, (336 + 25)*b, (195 + 35)*b);
-            ctx.bezierCurveTo((376 + 25)*b, (177 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (98 + 35)*b);
-            ctx.fillStyle = a;
-            ctx.strokeStyle = "white";
-            ctx.fill();
-            ctx.stroke();
-
-            ctx.beginPath();
-            ctx.beginPath();
-            ctx.moveTo((157 + 25)*b, (110 + 33)*b);
-            ctx.bezierCurveTo((139 + 25)*b, (152 + 35)*b, (150 + 25)*b, (169 + 35)*b, (156 + 25)*b, (179 + 35)*b);
-            ctx.bezierCurveTo((166 + 25)*b, (194 + 35)*b, (194 + 25)*b, (195 + 35)*b, (209 + 25)*b, (192 + 35)*b);
-            ctx.bezierCurveTo((240 + 25)*b, (185 + 35)*b, (317 + 25)*b, (164 + 35)*b, (332 + 25)*b, (160 + 35)*b);
-            ctx.bezierCurveTo((364 + 25)*b, (152 + 35)*b, (573 + 25)*b, (92 + 35)*b, (559 + 25)*b, (96 + 35)*b);
-            ctx.strokeStyle = "white";
-            ctx.fillStyle = "white";
-            ctx.fill();
-        }
-        da = document.getElementById("size")  //get canvas element
-        da.addEventListener('click', wipe, false) //register event
-        function wipe(){
-            
-            var c = document.getElementById('newCanvas');
-            var ctx = c.getContext('2d');
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-
-        function toggle(IDS) {
-        var sel = document.getElementById('pg').getElementsByTagName('div');
-        for (var i=0; i<sel.length; i++) { 
-        if (sel[i].id != IDS) { sel[i].style.display = 'none'; }
-        }
-        var status = document.getElementById(IDS).style.display;
-        if (status == 'block') { document.getElementById(IDS).style.display = 'none'; }
-        else { document.getElementById(IDS).style.display = 'block'; }
-
-  return false;
-}
-
-
-        </script>
-        
-
-        
-
-        
-        
-
-       
-        
+                <h1 class="h1"> Comparison </h1>
 
 
 
 
 
 
+
+
+
+
+
+
+
+            </div>
+
+            <script>
+                var canvas = document.getElementById('newCanvas');
+var heightRatio = 1;
+canvas.height = canvas.width * heightRatio;
+
+                function getMousePos(canvas, evt) {
+                    var rect = canvas.getBoundingClientRect();
+                    return {
+                        x: evt.clientX - rect.left,
+                        y: evt.clientY - rect.top
+                    };
+                }
+
+                can = document.getElementById("color")  //get canvas element
+                can.addEventListener('input', DrawCanvas, false) //register event
+                function DrawCanvas() {
+                    var a = document.getElementById("color").value;
+                    var c = document.getElementById('newCanvas');
+                    var b = document.getElementById('size').valueAsNumber;
+                    var ctx = c.getContext('2d');
+
+                    ctx.beginPath();
+                    ctx.moveTo((157 + 25) * b, (109 + 35) * b);
+                    ctx.bezierCurveTo((131 + 25) * b, (140 + 35) * b, (119 + 25) * b, (155 + 35) * b, (105 + 25) * b, (192 + 35) * b);
+                    ctx.bezierCurveTo((89 + 25) * b, (233 + 35) * b, (119 + 25) * b, (256 + 35) * b, (131 + 25) * b, (260 + 35) * b);
+                    ctx.bezierCurveTo((144 + 25) * b, (264 + 35) * b, (171 + 25) * b, (266 + 35) * b, (199 + 25) * b, (254 + 35) * b);
+                    ctx.bezierCurveTo((287 + 25) * b, (217 + 35) * b, (313 + 25) * b, (205 + 35) * b, (336 + 25) * b, (195 + 35) * b);
+                    ctx.bezierCurveTo((376 + 25) * b, (177 + 35) * b, (573 + 25) * b, (92 + 35) * b, (559 + 25) * b, (98 + 35) * b);
+                    ctx.fillStyle = a;
+                    ctx.strokeStyle = "white";
+                    ctx.fill();
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.beginPath();
+                    ctx.moveTo((157 + 25) * b, (110 + 33) * b);
+                    ctx.bezierCurveTo((139 + 25) * b, (152 + 35) * b, (150 + 25) * b, (169 + 35) * b, (156 + 25) * b, (179 + 35) * b);
+                    ctx.bezierCurveTo((166 + 25) * b, (194 + 35) * b, (194 + 25) * b, (195 + 35) * b, (209 + 25) * b, (192 + 35) * b);
+                    ctx.bezierCurveTo((240 + 25) * b, (185 + 35) * b, (317 + 25) * b, (164 + 35) * b, (332 + 25) * b, (160 + 35) * b);
+                    ctx.bezierCurveTo((364 + 25) * b, (152 + 35) * b, (573 + 25) * b, (92 + 35) * b, (559 + 25) * b, (96 + 35) * b);
+                    ctx.strokeStyle = "white";
+                    ctx.fillStyle = "white";
+                    ctx.fill();
+                }
+                da = document.getElementById("size")  //get canvas element
+                da.addEventListener('click', wipe, false) //register event
+                function wipe() {
+
+                    var c = document.getElementById('newCanvas');
+                    var ctx = c.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+
+                function toggle(IDS) {
+                    var sel = document.getElementById('pg').getElementsByTagName('div');
+                    for (var i = 0; i < sel.length; i++) {
+                        if (sel[i].id != IDS) { sel[i].style.display = 'none'; }
+                    }
+                    var status = document.getElementById(IDS).style.display;
+                    if (status == 'block') { document.getElementById(IDS).style.display = 'none'; }
+                    else { document.getElementById(IDS).style.display = 'block'; }
+
+                    return false;
+                }
+
+
+            </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
     </div>
-</div>
     <div id="footer"></div>
     <div id="mySidenav" class="sidenav">
-        
-        <a href="#" onclick="return toggle('pg0')" >Bezier</a>
-        <a href="#" onclick="return toggle('pg1')" >SVG</a>
-        <a href="#" onclick="return toggle('pg2')" >PNG</a>
-        <a href="#" onclick="return toggle('pg3')" >Nikeify!</a>
-      </div>
+
+        <a href="#" onclick="return toggle('pg0')">Bezier</a>
+        <a href="#" onclick="return toggle('pg1')">SVG</a>
+        <a href="#" onclick="return toggle('pg2')">PNG</a>
+        <a href="#" onclick="return toggle('pg3')">Nikeify!</a>
+    </div>
 </body>
 
 </html>

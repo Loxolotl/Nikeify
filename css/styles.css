@@ -1,3 +1,6 @@
+
+img, a {outline:none}
+
 body{
     margin-top: 0px;
     padding: 0px;
@@ -258,10 +261,56 @@ body{
 }
 
 #newCanvas{
-  position: absolute;
-  margin-left: 25%;
-  width: 50%;
-  top: 15%;
+  
+  
+  width: 40%;
+  
   border: 2px #E8866C solid;
   border-radius: 15px;
+}
+
+
+
+
+#svg{
+  z-index: 1;
+  opacity: 85%;
+  margin-left: 13.5vh;
+  margin-top: 9vh;
+}
+
+#imgshrt{
+  height: 50vh;
+  width: 40vh;
+  background-image: url(../img/mask2.png);
+  background-repeat: no-repeat;
+  background-size: 40vh;
+  z-index: 5;
+  border: 2px #E8866C solid;
+  border-radius: 15px;
+  position: absolute;
+  z-index: 0;
+}
+
+#imgshrt2{
+  height: 50vh;
+  width: 40vh;
+  background-image: url(../img/mask.png);
+  background-repeat: no-repeat;
+  background-size: 40vh;
+  z-index: 6;
+  
+  z-index: 0;
+}
+
+#imgpng{
+  margin-left: 20vh;
+  margin-top: 8vh;
+  height: 10vh;
+  width: 20vh;
+  background-image: url(../img/nike.png);
+  background-repeat: no-repeat;
+  background-size: 10vh;
+  z-index: 5;
+  position: absolute;
 }
