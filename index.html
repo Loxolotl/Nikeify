@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
 
     <div id="header">
         <div id="swoosh"></div>
@@ -21,7 +21,6 @@
             <div class="item" id="item1" onclick="return toggle('pg0')">Bezier</div>
             <div class="item" id="item2" onclick="return toggle('pg1')">SVG</div>
             <div class="item" id="item3" onclick="return toggle('pg2')">PNG</div>
-            <div class="item" id="item4" onclick="return toggle('pg3')">Nikeify!</div>
         </div>
         <div id="nav-icon1" onclick="openNav()">
             <span></span>
@@ -36,23 +35,27 @@
                 <h1>Bezier Curve</h1>
 
                 <p>This is a preview of our powerful bezier curve technology, you can change its color as you wish</p>
-                
+
                 <p>
-                <input type="color" id="color" value="#000000">
-                <input type="range" id="size" min="0.1" max="1.3" value="0.1" step="0.1">
-            </p>
+                    <input type="color" id="color" value="#000000">
+                    <input type="range" id="size" min="0.1" max="1.3" value="0.1" step="0.1">
+                </p>
                 <canvas id="newCanvas" width="800" height="800"></canvas>
 
             </div>
             <div id="pg1" class="pg">
                 <h1 class="h1"> SVG path </h1>
                 <p>
-                    This is a preview of our SVG technology
+                    This is a preview of our SVG technology. The path/stroke of the image is defined mathimatically.
+                    This negates the issue of pixelation when upscaling, it is very useful when it comes to various
+                    positions and sizes, as it will always be the same image. Other factors of it can be edited very
+                    easily too.
                 </p>
-                <p>
-                <img id="imgshrt" src="img/Empty.png">
-                <svg xmlns="http://www.w3.org/2000/svg" width="137px" height="54px" viewBox="0 0 4944 1950" id="svg">
-                    <path id="Neimenovano" fill="black" stroke="black" stroke-width="1" d="M 837.88,140.50
+                <p id="svgGroup">
+                    <img id="imgshrt" src="img/Empty.png">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13.7vh" height="5.4vh" viewBox="0 0 4944 1950"
+                        id="svg">
+                        <path id="Neimenovano" fill="black" stroke="black" stroke-width="1" d="M 837.88,140.50
            C 837.88,140.50 471.50,766.00 812.00,1003.00
              1156.50,1248.00 1698.00,967.50 2107.50,886.50
              2619.00,733.50 4779.00,156.00 4779.00,156.00
@@ -60,8 +63,8 @@
              1600.00,1560.00 1050.00,1843.50 678.00,1807.50
              325.50,1797.00 40.50,1542.00 207.00,1048.50
              379.50,604.50 646.50,351.00 837.81,140.56" />
-                </svg>
-            </p>
+                    </svg>
+                </p>
 
 
 
@@ -75,16 +78,24 @@
             </div>
             <div id="pg2" class="pg">
                 <h1 class="h1"> PNG image </h1>
-                
+                <p>
+                    This simple image format is very cheap to produce and create, however there is a downside, the image
+                    is a fixed pixelated resolution which can cause it to become pixelated and blocky when resizing. It
+                    is also limited in color options as each one has to be saved individually, where as SVG and Bezier
+                    can be altered very easily.
+
+
+
+                </p>
 
                 <img id="imgpng" src="img/Empty.png">
 
 
                 <img id="imgshrt2" src="img/Empty.png">
 
-                
 
-                
+
+
 
 
 
@@ -100,10 +111,31 @@
             </div>
             <div id="pg3" class="pg">
                 <h1 class="h1"> Comparison </h1>
+                <p>
+                    Here is a simple comparison of all the previously mentioned systems, they have been resized and
+                    marked so you can see the accuracy and validity of them easily.
+                </p>
+                <p>
+
+                </p>
+                <p id="stuff">
+                    <img id="imgpng" src="img/Empty.png">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13.7vh" height="5.4vh" viewBox="0 0 4944 1950" id="svg">
+                        <path id="Neimenovano" fill="black" stroke="black" stroke-width="1" d="M 837.88,140.50
+                            C 837.88,140.50 471.50,766.00 812.00,1003.00
+                            1156.50,1248.00 1698.00,967.50 2107.50,886.50
+                            2619.00,733.50 4779.00,156.00 4779.00,156.00
+                            4779.00,156.00 1600.00,1560.00 1600.00,1560.00
+                            1600.00,1560.00 1050.00,1843.50 678.00,1807.50
+                            325.50,1797.00 40.50,1542.00 207.00,1048.50
+                            379.50,604.50 646.50,351.00 837.81,140.56" />
+                    </svg>
 
 
 
-
+                    <canvas id="newCanvas2" width="800" height="800"></canvas>
+                </p>
 
 
 
@@ -117,8 +149,8 @@
 
             <script>
                 var canvas = document.getElementById('newCanvas');
-var heightRatio = 1;
-canvas.height = canvas.width * heightRatio;
+                var heightRatio = 1;
+                canvas.height = canvas.width * heightRatio;
 
                 function getMousePos(canvas, evt) {
                     var rect = canvas.getBoundingClientRect();
@@ -136,7 +168,7 @@ canvas.height = canvas.width * heightRatio;
                     var b = document.getElementById('size').valueAsNumber;
                     var ctx = c.getContext('2d');
 
-                    ctx.clearRect(0,0, canvas.width, canvas.height)
+                    ctx.clearRect(0, 0, canvas.width, canvas.height)
                     ctx.beginPath();
                     ctx.moveTo((157 + 25) * b, (109 + 35) * b);
                     ctx.bezierCurveTo((131 + 25) * b, (140 + 35) * b, (119 + 25) * b, (155 + 35) * b, (105 + 25) * b, (192 + 35) * b);
@@ -170,44 +202,71 @@ canvas.height = canvas.width * heightRatio;
                 }
 
                 function toggle(IDS) {
-                    var sel = document.getElementById('pg').getElementsByTagName('div');
-                    for (var i = 0; i < sel.length; i++) {
-                        if (sel[i].id != IDS) { sel[i].style.display = 'none'; }
+  var sel = document.getElementById('pg').getElementsByTagName('div');
+  for (var i = 0; i < sel.length; i++) {
+    var content = sel[i];
+    if (content.id === IDS) {
+      if (content.style.display === 'none') {
+        content.style.display = 'block';
+      }
+    } else {
+      content.style.display = 'none';
+    }
+  }
+  return false;
+}
+
+// Set the initial state of the content blocks to hidden
+var sel = document.getElementById('pg').getElementsByTagName('div');
+for (var i = 0; i < sel.length; i++) {
+  if (sel[i].id === 'pg0') {
+    sel[i].style.display = 'block';
+  } else {
+    sel[i].style.display = 'none';
+  }
+}
+
+
+
+
+                document.addEventListener('click', function (event) {
+
+                    if (event.target.closest('#nav-icon1')) {
+
                     }
-                    var status = document.getElementById(IDS).style.display;
-                    if (status == 'block') { document.getElementById(IDS).style.display = 'none'; }
-                    else { document.getElementById(IDS).style.display = 'block'; }
-
-                    return false;
-                }
+                    else {
+                        closeNav();
+                    }
+                })
 
 
+                face = document.getElementById("facebook")  //get canvas element
+                face.addEventListener('click', NewTabFacebook, false) //register event
+                twit = document.getElementById("twitter")  //get canvas element
+                twit.addEventListener('click', NewTabTwitter, false) //register event
+                inst = document.getElementById("instagram")  //get canvas element
+                inst.addEventListener('click', NewTabInsta, false) //register event
+                link = document.getElementById("linkedin")  //get canvas element
+                link.addEventListener('click', NewTabLink, false) //register event
 
-                document.addEventListener('click', function(event){
-
-if(event.target.closest('#nav-icon1')) {
-
-}
-else{
-    closeNav();
-}
-})
+                function NewTabFacebook() {
+            window.open(
+            "www.facebook.com/nike/", "_blank");
+        }
+        function NewTabInsta() {
+            window.open(
+            "https://www.instagram.com/nike/", "_blank");
+        }
+        function NewTabTwitter() {
+            window.open(
+            "https://twitter.com/Nike", "_blank");
+        }
+        function NewTabLink() {
+            window.open(
+            "https://www.linkedin.com/company/nike/", "_blank");
+        }
 
             </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         </div>
     </div>
@@ -216,13 +275,13 @@ else{
             © Copyright 2023 Aldijan Smlatic, some rights reserved
         </div>
         <div id="pt2">
-            
+
         </div>
         <div id="pt3">
-            <img class="smol" id="facebook" src="img/Empty.png">
-            <img class="smol" id="twitter" src="img/Empty.png">
-            <img class="smol" id="linkedin" src="img/Empty.png">
-            <img class="smol" id="instagram" src="img/Empty.png">
+            <a href="https:/www.facebook.com/nike/" target="_blank"> <img class="smol" id="facebook" src="img/Empty.png"></a>
+            <a href="https://twitter.com/Nike" target="_blank"><img class="smol" id="twitter" src="img/Empty.png"></a>
+            <a href="https://www.linkedin.com/company/nike/" target="_blank"><img class="smol" id="linkedin" src="img/Empty.png"></a>
+            <a href="https://www.instagram.com/nike/" target="_blank"><img class="smol" id="instagram" src="img/Empty.png"></a>
 
         </div>
 
@@ -233,7 +292,7 @@ else{
         <a href="#" onclick="return toggle('pg0')">Bezier</a>
         <a href="#" onclick="return toggle('pg1')">SVG</a>
         <a href="#" onclick="return toggle('pg2')">PNG</a>
-        <a href="#" onclick="return toggle('pg3')">Nikeify!</a>
+
     </div>
 </body>
 

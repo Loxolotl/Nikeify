@@ -12,6 +12,7 @@ body{
     background-position: calc(100%-10vh);
     background-size: 100% 100%;
 }
+
 #pg1 { display:none; }
 #pg2 { display:none; }
 #pg3 { display:none; }
@@ -81,10 +82,11 @@ body{
     }
 	#wrapper{
 		font-size: 2em !important;
-  
+    width: 90% !important;
 	}
   #pt1{
     font-size: 1.1em !important;
+    line-height: 2.5vh !important;
   }
   #color{
     width: 6em !important;
@@ -234,13 +236,13 @@ body{
 #wrapper{
   background-color: #ffffff;
   height: 100vh;
-  width: 90%;
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 1px 2px 5px gray;
   margin-top: 11vh;
   border-radius: 15px;
-  padding: 10px;
+  padding: 2vh;
   color: #494546;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 1em;
@@ -248,8 +250,14 @@ body{
   
   
 }
+@media only screen and (max-width: 1440px){
+  #wrapper{
+    padding: 2vh;
+  }
+}
 #wrapper h1{
   color: #E8866C;
+  margin-top: -0.6vh;
 }
 
 #footer{
@@ -276,10 +284,19 @@ body{
   
   width: 40%;
   
-  border: 2px #E8866C solid;
+  border: 2px #cecdcd solid;
+  
   border-radius: 15px;
 }
-
+#newCanvas2{
+  
+  
+  width: 40%;
+  
+  border: 2px #cecdcd solid;
+  
+  border-radius: 15px;
+}
 
 
 
@@ -291,13 +308,13 @@ body{
 }
 
 #imgshrt{
-  height: 50vh;
+  height: 48vh;
   width: 40vh;
   background-image: url(../img/mask2.png);
   background-repeat: no-repeat;
   background-size: 40vh;
   z-index: 5;
-  border: 2px #E8866C solid;
+  border: 2px #cecdcd solid;
   border-radius: 15px;
   position: absolute;
   z-index: 0;
@@ -310,7 +327,8 @@ body{
   background-repeat: no-repeat;
   background-size: 40vh;
   z-index: 6;
-  
+  border: 2px #cecdcd solid;
+  border-radius: 15px;
   z-index: 0;
 }
 
@@ -422,4 +440,8 @@ body{
   background-image: url(../img/linkedin.png);
   scale: 1.05;
   transition: 0.5s;
+}
+
+#stuff{
+  display: inline-flex;
 }
