@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+    
 
     <div id="header">
         <div id="swoosh"></div>
@@ -39,7 +39,7 @@
                 
                 <p>
                 <input type="color" id="color" value="#000000">
-                <input type="range" id="size" min="0.1" max="1" value="0.1" step="0.1">
+                <input type="range" id="size" min="0.1" max="1.3" value="0.1" step="0.1">
             </p>
                 <canvas id="newCanvas" width="800" height="800"></canvas>
 
@@ -136,6 +136,7 @@ canvas.height = canvas.width * heightRatio;
                     var b = document.getElementById('size').valueAsNumber;
                     var ctx = c.getContext('2d');
 
+                    ctx.clearRect(0,0, canvas.width, canvas.height)
                     ctx.beginPath();
                     ctx.moveTo((157 + 25) * b, (109 + 35) * b);
                     ctx.bezierCurveTo((131 + 25) * b, (140 + 35) * b, (119 + 25) * b, (155 + 35) * b, (105 + 25) * b, (192 + 35) * b);
@@ -181,6 +182,17 @@ canvas.height = canvas.width * heightRatio;
                 }
 
 
+
+                document.addEventListener('click', function(event){
+
+if(event.target.closest('#nav-icon1')) {
+
+}
+else{
+    closeNav();
+}
+})
+
             </script>
 
 
@@ -199,7 +211,23 @@ canvas.height = canvas.width * heightRatio;
 
         </div>
     </div>
-    <div id="footer"></div>
+    <div id="footer">
+        <div id="pt1">
+            © Copyright 2023 Aldijan Smlatic, some rights reserved
+        </div>
+        <div id="pt2">
+            
+        </div>
+        <div id="pt3">
+            <img class="smol" id="facebook" src="img/Empty.png">
+            <img class="smol" id="twitter" src="img/Empty.png">
+            <img class="smol" id="linkedin" src="img/Empty.png">
+            <img class="smol" id="instagram" src="img/Empty.png">
+
+        </div>
+
+
+    </div>
     <div id="mySidenav" class="sidenav">
 
         <a href="#" onclick="return toggle('pg0')">Bezier</a>

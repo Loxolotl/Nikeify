@@ -22,7 +22,7 @@ body{
   background-color: #111;
   opacity: 0;
   transition: opacity 0.2s;
-  z-index: 0.9;
+  z-index: 199;
   top: 0px;
 }
 #header{
@@ -83,12 +83,23 @@ body{
 		font-size: 2em !important;
   
 	}
+  #pt1{
+    font-size: 1.1em !important;
+  }
   #color{
     width: 6em !important;
     height: 4em !important;
   }
   #size{
     width: 16em !important;
+  }
+  #newCanvas{
+    width: 80% !important;
+  }
+  #size{
+    width: 40% !important;
+    scale: 1.4;
+    margin-left: 75px;
   }
 }
 
@@ -168,7 +179,7 @@ body{
     height: 100%; /* 100% Full-height */
     width: 0; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Stay on top */
+    z-index: 200; /* Stay on top */
     top: 0; /* Stay at the top */
     right: 0;
     background-color: #423d3e; /* Black*/
@@ -313,4 +324,102 @@ body{
   background-size: 10vh;
   z-index: 5;
   position: absolute;
+}
+
+#footer{
+  color: #b8b8b8;
+  display: inline-flex;
+  bottom: 0;
+  line-height: 5vh;
+  
+}
+#pt1{
+  flex: 2;
+  margin-left: 2vh;
+  margin-top: 5vh;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+#pt2{
+  flex: 0.5;
+}
+#pt3{
+  flex: 2;
+  display: flexbox;
+  
+  
+}
+
+#facebook{
+  background-image: url(../img/facebook_dim.png);
+  background-size: 3vh;
+  background-repeat: no-repeat;
+  flex: 25%;
+  width: 3vh;
+  height: 3vh;
+  margin-top: 5vh;
+  
+  float: right;
+  margin-right: 1vh;
+
+}
+#twitter{
+  background-image: url(../img/twitter_dim.png);
+  background-size: 3vh;
+  background-repeat: no-repeat;
+  flex: 25%;
+  
+  width: 3vh;
+  height: 3vh;
+  margin-top: 5vh;
+  float: right;
+  margin-right: 1vh;
+}
+#linkedin{
+  background-image: url(../img/linkedin_dim.png);
+  background-size: 3vh;
+  background-repeat: no-repeat;
+  flex: 25%;
+  
+  width: 3vh;
+  height: 3vh;
+  margin-top: 5vh;
+  float: right;
+  margin-right: 1vh;
+}
+#instagram{
+  background-image: url(../img/instagram_dim.png);
+  background-size: 3vh;
+  background-repeat: no-repeat;
+  flex: 25%;
+  
+  width: 3vh;
+  height: 3vh;
+  margin-top: 5vh;
+  transition: 0.5s;
+  float: right;
+  margin-right: 1vh;
+}
+
+#facebook:hover{
+  background-image: url(../img/facebook.png);
+  scale: 1.05;
+  transition: 0.5s;
+}
+
+#twitter:hover{
+  background-image: url(../img/twitter.png);
+  scale: 1.05;
+  transition: 0.5s;
+}
+
+#instagram:hover{
+  background-image: url(../img/instagram.png);
+  scale: 1.05;
+  transition: 0.5s;
+}
+
+#linkedin:hover{
+  background-image: url(../img/linkedin.png);
+  scale: 1.05;
+  transition: 0.5s;
 }
